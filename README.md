@@ -1,2 +1,3 @@
-# 2days-ai-vvwc3-task-54
-REAL AI BOT TEST · Illustration: animals playing in nature (built by a bot teammate)
+# Illustration: animals playing in nature
+
+Screens for this project as HTML pages, made by a bot teammate instead of a Figma file. Open index.html (or the published link) to see every screen and state. The design handoff spec is in SPEC.md.
