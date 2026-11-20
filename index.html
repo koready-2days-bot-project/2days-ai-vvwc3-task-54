@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animals Playing in Nature</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #2d3748;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 960px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+    p.caption {
+      font-size: 15px;
+      color: #4a5568;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .illustration-wrapper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Animals Playing in Nature</h1>
+    <p class="caption">A joyful gather of wild animals playing together on a sunny green meadow under a vibrant blue sky.</p>
+    <div class="illustration-wrapper">
+      <svg viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Sky Gradient -->
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1268C3"/>
+            <stop offset="40%" stop-color="#258CF4"/>
+            <stop offset="75% stop-color="#62B4FF"/>
+            <stop offset="100%" stop-color="#A2D7FF"/>
+          </linearGradient>
+
+          <!-- Hill Gradients -->
+          <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7CB342"/>
+            <stop offset="100%" stop-color="#558B2F"/>
+          </linearGradient>
+          <linearGradient id="hillMid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8BC34A"/>
+            <stop offset="100%" stop-color="#689F38"/>
+          </linearGradient>
+          <linearGradient id="hillFront" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9CCC65"/>
+            <stop offset="100%" stop-color="#558B2F"/>
+          </linearGradient>
+
+          <!-- Cloud Filter for softness -->
+          <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <!-- Sky -->
+        <rect width="1000" height="650" fill="url(#skyGrad)" />
+
+        <!-- Clouds -->
+        <g fill="#FFFFFF" opacity="0.95">
+          <!-- Cloud Left -->
+          <path d="M 60 160 A 35 35 0 0 1 110 130 A 45 45 0 0 1 180 120 A 40 40 0 0 1 230 150 A 30 30 0 0 1 250 180 A 25 25 0 0 1 220 200 L 50 200 A 25 25 0 0 1 60 160 Z" />
+          <!-- Cloud Mid Big -->
+          <path d="M 320 140 A 45 45 0 0 1 380 100 A 60 60 0 0 1 480 90 A 55 55 0 0 1 560 130 A 40 40 0 0 1 600 170 L 300 170 A 35 35 0 0 1 320 140 Z" />
+          <path d="M 550 180 A 35 35 0 0 1 610 150 A 50 50 0 0 1 690 150 A 40 40 0 0 1 730 190 L 530 190 A 25 25 0 0 1 550 180 Z" />
+          <!-- Cloud Right High -->
+          <path d="M 780 110 A 40 40 0 0 1 840 80 A 50 50 0 0 1 920 90 A 35 35 0 0 1 960 130 L 760 130 A 30 30 0 0 1 780 110 Z" />
+        </g>
+
+        <!-- Distant Tree Line on Horizon -->
+        <g fill="#2E7D32">
+          <path d="M 40 370 Q 70 340 100 370 Q 130 330 160 370 Q 190 335 220 370 Q 250 340 280 370 Z" />
+          <path d="M 200 380 L 210 320 L 220 380 L 230 310 L 240 380 L 250 325 L 260 380 Z" fill="#1B5E20" />
+          <path d="M 60 385 L 70 330 L 80 385 L 90 320 L 100 385 L 110 335 L 120 385 Z" fill="#1B5E20" />
+        </g>
+
+        <!-- Far Background Hill -->
+        <path d="M -50 420 Q 200 340 500 380 T 1050 360 L 1050 650 L -50 650 Z" fill="url(#hillFar)" />
+
+        <!-- Lone Round Tree (Matching Reference Style) -->
+        <g id="reference-style-tree">
+          <!-- Trunk -->
+          <path d="M 670 420 Q 675 360 672 330 Q 682 360 685 420 Z" fill="#4E342E" />
+          <!-- Shadow under tree -->
+          <ellipse cx="680" cy="422" rx="35" ry="8" fill="#33691E" opacity="0.5" />
+          <!-- Lush Foliage -->
+          <ellipse cx="678" cy="310" rx="42" ry="55" fill="#1B5E20" />
+          <ellipse cx="665" cy="300" rx="38" ry="48" fill="#2E7D32" />
+          <ellipse cx="685" cy="290" rx="32" ry="42" fill="#388E3C" />
+          <ellipse cx="670" cy="275" rx="25" ry="30" fill="#4CAF50" />
+        </g>
+
+        <!-- Midground Hill -->
+        <path d="M -50 460 Q 300 400 650 440 T 1050 410 L 1050 650 L -50 650 Z" fill="url(#hillMid)" />
+
+        <!-- Foreground Hill / Main Meadow -->
+        <path d="M -50 510 Q 350 430 1050 480 L 1050 650 L -50 650 Z" fill="url(#hillFront)" />
+
+        <!-- Decorative Grass Tufts & Flowers -->
+        <g fill="#33691E">
+          <path d="M 120 540 Q 123 520 120 510 Q 128 522 132 540 Q 138 518 142 540 Z" />
+          <path d="M 380 580 Q 383 560 380 550 Q 388 562 392 580 Q 398 558 402 580 Z" />
+          <path d="M 820 550 Q 823 530 820 520 Q 828 532 832 550 Q 838 528 842 550 Z" />
+        </g>
+
+        <!-- Flowers -->
+        <g id="flowers">
+          <!-- Red flower -->
+          <circle cx="180" cy="560" r="5" fill="#E91E63" />
+          <circle cx="180" cy="560" r="2" fill="#FFEB3B" />
+          <!-- Yellow flower -->
+          <circle cx="220" cy="585" r="6" fill="#FFC107" />
+          <circle cx="220" cy="585" r="2.5" fill="#795548" />
+          <!-- White daisy -->
+          <circle cx="450" cy="590" r="5" fill="#FFFFFF" />
+          <circle cx="450" cy="590" r="2" fill="#FFC107" />
+          <!-- Blue flower -->
+          <circle cx="750" cy="565" r="5" fill="#29B6F6" />
+          <circle cx="750" cy="565" r="2" fill="#FFF" />
+        </g>
+
+        <!-- ANIMALS PLAYING TOGETHER -->
+
+        <!-- 1. Playful Bear Sitting & Waving -->
+        <g id="bear" transform="translate(260, 440)">
+          <!-- Bear Shadow -->
+          <ellipse cx="50" cy="110" rx="45" ry="12" fill="#2E7D32" opacity="0.4" />
+          <!-- Body -->
+          <path d="M 20 60 Q 15 110 50 110 Q 85 110 80 60 Q 70 35 50 35 Q 30 35 20 60 Z" fill="#6D4C41" />
+          <!-- Belly -->
+          <ellipse cx="50" cy="75" rx="22" ry="25" fill="#D7CCC8" />
+          <!-- Left Foot -->
+          <ellipse cx="20" cy="105" rx="12" ry="8" fill="#5D4037" />
+          <ellipse cx="20" cy="104" rx="7" ry="5" fill="#D7CCC8" />
+          <!-- Right Foot -->
+          <ellipse cx="80" cy="105" rx="12" ry="8" fill="#5D4037" />
+          <ellipse cx="80" cy="104" rx="7" ry="5" fill="#D7CCC8" />
+          <!-- Head -->
+          <circle cx="50" cy="30" r="24" fill="#6D4C41" />
+          <!-- Ears -->
+          <circle cx="32" cy="12" r="8" fill="#6D4C41" />
+          <circle cx="32" cy="12" r="4" fill="#D7CCC8" />
+          <circle cx="68" cy="12" r="8" fill="#6D4C41" />
+          <circle cx="68" cy="12" r="4" fill="#D7CCC8" />
+          <!-- Snout -->
+          <ellipse cx="50" cy="34" rx="10" ry="7" fill="#D7CCC8" />
+          <ellipse cx="50" cy="30" rx="4" ry="3" fill="#3E2723" />
+          <!-- Eyes -->
+          <circle cx="42" cy="25" r="2.5" fill="#3E2723" />
+          <circle cx="58" cy="25" r="2.5" fill="#3E2723" />
+          <!-- Happy Smile -->
+          <path d="M 46 36 Q 50 40 54 36" stroke="#3E2723" stroke-width="1.5" fill="none" stroke-linecap="round" />
+          <!-- Left Arm Resting -->
+          <path d="M 22 50 Q 8 65 18 75" stroke="#6D4C41" stroke-width="10" stroke-linecap="round" fill="none" />
+          <!-- Right Arm Waving Up -->
+          <path d="M 78 50 Q 95 30 90 15" stroke="#6D4C41" stroke-width="10" stroke-linecap="round" fill="none" />
+          <circle cx="90" cy="14" r="6" fill="#6D4C41" />
+        </g>
+
+        <!-- 2. Happy Deer Grazing / Playing -->
+        <g id="deer" transform="translate(520, 430)">
+          <!-- Shadow -->
+          <ellipse cx="60" cy="115" rx="50" ry="10" fill="#2E7D32" opacity="0.4" />
+          <!-- Legs -->
+          <rect x="30" y="70" width="6" height="42" rx="3" fill="#8D6E63" />
+          <rect x="42" y="70" width="6" height="40" rx="3" fill="#A1887F" />
+          <rect x="75" y="70" width="6" height="42" rx="3" fill="#8D6E63" />
+          <rect x="86" y="70" width="6" height="38" rx="3" fill="#A1887F" />
+          <!-- Body -->
+          <ellipse cx="60" cy="65" rx="35" ry="20" fill="#A1887F" />
+          <!-- White Spots -->
+          <circle cx="50" cy="58" r="2" fill="#FFF" opacity="0.8" />
+          <circle cx="62" cy="54" r="2.5" fill="#FFF" opacity="0.8" />
+          <circle cx="72" cy="60" r="2" fill="#FFF" opacity="0.8" />
+          <!-- Neck & Head -->
+          <path d="M 32 60 Q 22 35 15 25 Q 8 22 5 28 Q 12 40 25 68 Z" fill="#A1887F" />
+          <!-- Head -->
+          <ellipse cx="12" cy="25" rx="12" ry="8" transform="rotate(-15 12 25)" fill="#A1887F" />
+          <!-- Muzzle -->
+          <ellipse cx="4" cy="27" rx="5" ry="4" fill="#D7CCC8" />
+          <circle cx="2" cy="26" r="2" fill="#3E2723" />
+          <!-- Eye -->
+          <circle cx="12" cy="22" r="2" fill="#3E2723" />
+          <!-- Ear -->
+          <ellipse cx="20" cy="18" rx="8" ry="4" transform="rotate(-40 20 18)" fill="#A1887F" />
+          <!-- Antlers (Young buck) -->
+          <path d="M 16 18 L 18 6 M 18 10 L 22 7" stroke="#5D4037" stroke-width="2" stroke-linecap="round" />
+          <!-- Tail -->
+          <path d="M 93 60 Q 100 55 95 68 Z" fill="#FFF" />
+        </g>
+
+        <!-- 3. Playful Running Fox -->
+        <g id="fox" transform="translate(400, 490)">
+          <!-- Shadow -->
+          <ellipse cx="40" cy="65" rx="35" ry="8" fill="#2E7D32" opacity="0.4" />
+          <!-- Tail -->
+          <path d="M 60 45 Q 90 35 85 15 Q 70 25 50 40 Z" fill="#E65100" />
+          <path d="M 85 15 Q 80 22 73 24 Z" fill="#FFFFFF" />
+          <!-- Body -->
+          <ellipse cx="38" cy="45" rx="22" ry="12" transform="rotate(-10 38 45)" fill="#EF6C00" />
+          <!-- Legs -->
+          <path d="M 22 52 L 15 65 M 28 53 L 24 65" stroke="#E65100" stroke-width="4" stroke-linecap="round" />
+          <path d="M 48 50 L 52 65 M 54 48 L 60 63" stroke="#EF6C00" stroke-width="4" stroke-linecap="round" />
+          <!-- Head -->
+          <polygon points="20,38 5,35 18,25" fill="#EF6C00" />
+          <polygon points="12,36 5,35 10,30" fill="#FFFFFF" />
+          <!-- Ear -->
+          <polygon points="16,26 20,12 24,24" fill="#E65100" />
+          <polygon points="18,24 20,15 22,23" fill="#212121" />
+          <!-- Nose & Eye -->
+          <circle cx="5" cy="35" r="1.5" fill="#000" />
+          <circle cx="14" cy="30" r="1.5" fill="#000" />
+        </g>
+
+        <!-- 4. Cute Hopping Rabbit -->
+        <g id="rabbit" transform="translate(180, 500)">
+          <!-- Shadow -->
+          <ellipse cx="25" cy="52" rx="20" ry="6" fill="#2E7D32" opacity="0.4" />
+          <!-- Body -->
+          <ellipse cx="25" cy="38" rx="15" ry="12" fill="#ECEFF1" />
+          <!-- Head -->
+          <circle cx="14" cy="26" r="9" fill="#ECEFF1" />
+          <!-- Ears -->
+          <ellipse cx="10" cy="10" rx="3" ry="10" transform="rotate(-10 10 10)" fill="#ECEFF1" />
+          <ellipse cx="10" cy="10" rx="1.5" ry="7" transform="rotate(-10 10 10)" fill="#FFCDD2" />
+          <ellipse cx="17" cy="11" rx="3" ry="9" transform="rotate(10 17 11)" fill="#ECEFF1" />
+          <ellipse cx="17" cy="11" rx="1.5" ry="6" transform="rotate(10 17 11)" fill="#FFCDD2" />
+          <!-- Eye & Nose -->
+          <circle cx="11" cy="25" r="1.2" fill="#37474F" />
+          <circle cx="7" cy="27" r="1" fill="#FF80AB" />
+          <!-- Legs & Tail -->
+          <ellipse cx="32" cy="44" rx="8" ry="5" fill="#CFD8DC" />
+          <circle cx="39" cy="35" r="4" fill="#FFFFFF" />
+        </g>
+
+        <!-- Birds Flying High -->
+        <g stroke="#1565C0" stroke-width="2.5" stroke-linecap="round" fill="none">
+          <path d="M 300 100 Q 310 90 320 100 Q 330 90 340 100" />
+          <path d="M 335 115 Q 342 107 350 115 Q 358 107 365 115" />
+          <path d="M 720 80 Q 728 72 735 80 Q 742 72 750 80" />
+        </g>
+
+        <!-- Playful Butterflies -->
+        <g id="butterflies">
+          <!-- Yellow Butterfly -->
+          <path d="M 230 460 Q 225 450 232 445 Q 238 450 230 460 Z" fill="#FFD54F" />
+          <path d="M 230 460 Q 235 450 228 445 Q 222 450 230 460 Z" fill="#FFCA28" />
+          <!-- Blue Butterfly -->
+          <path d="M 650 480 Q 645 470 652 465 Q 658 470 650 480 Z" fill="#4FC3F7" />
+          <path d="M 650 480 Q 655 470 648 465 Q 642 470 650 480 Z" fill="#29B6F6" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
